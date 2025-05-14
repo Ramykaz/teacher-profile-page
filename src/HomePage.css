@@ -1,0 +1,242 @@
+.homepage-container {
+  width: 100%;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    #0056b3 100%
+  ); /* Gradient background */
+  color: #ffffff; /* White text on dark background */
+  text-align: center;
+  min-height: 70vh;
+}
+
+.hero-content {
+  max-width: 700px;
+  margin-bottom: 30px; /* Space before image on mobile */
+}
+
+.hero-headline {
+  font-size: 2.8em; /* Large, impactful headline */
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.hero-subheadline {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  opacity: 0.9; /* Slightly less prominent than headline */
+}
+
+.hero-cta-buttons {
+  display: flex;
+  flex-direction: column; /* Stack buttons on mobile */
+  align-items: center;
+  gap: 15px;
+}
+
+.cta-button {
+  padding: 12px 28px;
+  font-size: 1.1em;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease,
+    box-shadow 0.2s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px; /* Ensure buttons have a good width */
+}
+
+.cta-button .icon-before-text {
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+.cta-button.primary {
+  background-color: var(--success-color); /* Green button */
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button.primary:hover {
+  background-color: var(--success-hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary {
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.cta-button.secondary:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.hero-image-placeholder {
+  max-width: 500px; /* Control image size */
+  width: 100%;
+  margin-top: 20px;
+}
+
+.hero-image-placeholder img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Desktop layout for Hero Section */
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row; /* Side-by-side on desktop */
+    justify-content: space-around; /* Space between text and image */
+    text-align: left;
+    padding: 60px 40px;
+    min-height: calc(100vh - 80px); /* Full viewport minus header height approx */
+  }
+
+  .hero-content {
+    flex-basis: 50%; /* Text content takes half the space */
+    max-width: 600px;
+    margin-bottom: 0;
+    padding-right: 30px; /* Space between text and image */
+  }
+
+  .hero-headline {
+    font-size: 3.2em; /* Even larger on desktop */
+  }
+
+  .hero-subheadline {
+    font-size: 1.25em;
+  }
+
+  .hero-cta-buttons {
+    flex-direction: row; /* Buttons side-by-side */
+    justify-content: flex-start; /* Align to left */
+    gap: 20px;
+  }
+
+  .hero-image-placeholder {
+    flex-basis: 40%;
+    max-width: 550px;
+    margin-top: 0;
+  }
+}
+
+/* Value Proposition Section Styles */
+.value-prop-section {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #ffffff; /* White background for contrast */
+}
+
+.section-title {
+  font-size: 2.2em;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-bottom: 40px;
+  position: relative;
+  display: inline-block; /* For pseudo-element positioning */
+}
+
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--primary-color);
+  margin: 10px auto 0; /* Center the underline */
+  border-radius: 2px;
+}
+
+.value-cards-container {
+  display: flex;
+  flex-direction: column; /* Stack cards on mobile */
+  gap: 30px;
+  align-items: center; /* Center cards on mobile */
+  max-width: 1100px;
+  margin: 0 auto; /* Center the container */
+}
+
+.value-card {
+  background-color: var(--card-bg); /* Use card background from variables */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+  max-width: 350px; /* Max width for each card on mobile */
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.value-card-icon {
+  font-size: 3em; /* Large icon */
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.value-card-title {
+  font-size: 1.4em;
+  font-weight: 600;
+  color: var(--heading-color);
+  margin-bottom: 10px;
+}
+
+.value-card-description {
+  font-size: 1em;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Desktop layout for Value Proposition Section */
+@media (min-width: 768px) {
+  .value-prop-section {
+    padding: 80px 40px;
+  }
+
+  .section-title {
+    font-size: 2.5em;
+    margin-bottom: 60px;
+  }
+
+  .value-cards-container {
+    flex-direction: row; /* Cards side-by-side on desktop */
+    justify-content: space-around; /* Distribute space */
+    align-items: flex-start; /* Align cards to the top */
+  }
+
+  .value-card {
+    flex-basis: calc(33.333% - 20px); /* For 3 cards with gap */
+    max-width: none; /* Remove max-width constraint */
+  }
+}
+
+@media (min-width: 992px) {
+  .value-card {
+    padding: 35px;
+  }
+}

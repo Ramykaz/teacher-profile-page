@@ -1,0 +1,85 @@
+.site-main-header {
+  background-color: #ffffff; /* White background for header */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  position: sticky; /* Makes the header stick to the top on scroll */
+  top: 0;
+  z-index: 1000; /* Ensures header is above other content */
+  width: 100%;
+}
+
+.header-content-wrapper {
+  max-width: 1100px; /* Consistent max-width */
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* If you wrap it in an <a> tag for home */
+  color: var(--heading-color); /* Use heading color from App.css */
+}
+
+.logo-icon {
+  font-size: 1.8em;
+  color: var(--success-color); /* Green like the Seeds theme */
+  margin-right: 8px;
+}
+
+.site-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.main-navigation {
+  display: flex;
+  gap: 20px; /* Space between nav links */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: var(--light-gray-color);
+  color: var(--primary-color);
+}
+
+.nav-link.auth-link {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 8px 15px;
+}
+
+.nav-link.auth-link:hover {
+  background-color: var(--primary-hover-color);
+}
+
+/* Basic responsiveness for smaller screens (optional for this example) */
+@media (max-width: 768px) {
+  .main-navigation {
+    /* Could hide some links or stack them, or implement a burger menu */
+    /* For simplicity, we'll just let them wrap or reduce gap */
+    gap: 10px;
+  }
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 0.9em;
+  }
+  .site-name {
+    font-size: 1.3em;
+  }
+  .logo-icon {
+    font-size: 1.6em;
+  }
+}

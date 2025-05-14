@@ -1,0 +1,210 @@
+
+.teacher-profile-container {
+  padding: 0;
+  max-width: 1000px; /* Slightly wider for new layout */
+  margin: 30px auto;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: var(--card-bg);
+  overflow: hidden;
+}
+
+/* New Profile Intro Section Styles */
+.profile-intro-section {
+  display: flex;
+  flex-direction: column; /* Mobile first: stack columns */
+  align-items: center; /* Center content on mobile */
+  padding: 30px 25px;
+  background-color: var(--light-gray-color); /* Light background for hero */
+  border-bottom: 1px solid var(--border-color);
+}
+
+.intro-content {
+  text-align: center; /* Center text on mobile */
+  margin-bottom: 25px; /* Space below content before video on mobile */
+}
+
+.intro-content h1 {
+  margin-bottom: 10px;
+  color: var(--heading-color);
+  font-size: 2.4em; /* Prominent name */
+  font-weight: 700;
+}
+
+.intro-content h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: var(--primary-color); /* Make subject stand out */
+  font-size: 1.3em;
+  font-weight: 600;
+  display: inline-flex; /* For icon alignment */
+  align-items: center;
+}
+
+.intro-content h2 .icon-before-text {
+  color: var(--primary-color); /* Match subject text color */
+  font-size: 1em;
+  margin-right: 8px;
+}
+
+.intro-tagline {
+  font-size: 1.1em;
+  color: var(--text-color);
+  margin-bottom: 25px;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.book-session-button {
+  background-color: var(--success-color);
+  color: white;
+  border: none;
+  padding: 14px 28px; /* Larger button */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.1em; /* Larger font */
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+}
+
+.book-session-button:hover {
+  background-color: var(--success-hover-color);
+  transform: translateY(-2px);
+}
+.book-session-button:active {
+  transform: translateY(0px);
+}
+
+.intro-video-wrapper {
+  position: relative;
+  cursor: pointer;
+  max-width: 500px; /* Max width for video area */
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden; /* To keep play icon contained */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.video-thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Match wrapper */
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4em; /* Large play icon */
+  color: rgba(255, 255, 255, 0.9);
+  pointer-events: none; /* So click goes to wrapper */
+  transition: transform 0.2s ease;
+}
+
+.intro-video-wrapper:hover .play-icon {
+  transform: translate(-50%, -50%) scale(1.1); /* Slight zoom on hover */
+}
+
+/* Desktop layout for intro section */
+@media (min-width: 768px) {
+  .profile-intro-section {
+    flex-direction: row; /* Side-by-side columns */
+    justify-content: space-between;
+    align-items: center; /* Vertically align items in the center */
+    padding: 40px 30px;
+  }
+  .intro-content {
+    flex-basis: 55%; /* Adjust as needed */
+    text-align: left; /* Align text to left on desktop */
+    margin-bottom: 0; /* Remove bottom margin */
+    padding-right: 30px; /* Space between text and video */
+  }
+  .intro-content h1,
+  .intro-content h2,
+  .intro-tagline {
+    margin-left: 0; /* Reset auto margins for centering */
+    margin-right: 0;
+  }
+  .intro-video-wrapper {
+    flex-basis: 40%; /* Adjust as needed */
+    max-width: 450px; /* Control video size on desktop */
+  }
+}
+
+/* Profile Detailed Bio Section */
+.profile-detailed-bio {
+  padding: 30px 25px;
+}
+
+.profile-detailed-bio h3 {
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.6em; /* Larger heading for bio */
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+}
+
+.profile-detailed-bio h3 .icon-before-text {
+  margin-right: 10px;
+  font-size: 1em;
+  color: var(--primary-color);
+}
+
+.profile-detailed-bio p {
+  line-height: 1.8;
+  color: var(--text-color);
+  font-size: 1em;
+  text-align: justify;
+}
+
+/* Profile Courses Section */
+.profile-courses {
+  padding: 30px 25px;
+  background-color: #fdfdfd; /* Slightly off-white for course section */
+  border-top: 1px solid var(--border-color);
+}
+
+.profile-courses h3 {
+  color: var(--heading-color);
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.8em; /* Larger heading for courses */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.profile-courses h3 .icon-before-text {
+  margin-right: 10px;
+  font-size: 1em;
+  color: var(--primary-color);
+}
+
+.courses-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+@media (min-width: 768px) {
+  .courses-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+
+.icon-before-text {
+  vertical-align: middle;
+}
